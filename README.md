@@ -27,9 +27,17 @@ For building static sites but that does not limit to how dynamic it can be clien
 ### Other
 
   SASS
+
+  Bootstrap Grid
+
   Loader component
+
   Login Page
+
+    Enable various login options by removing comments
+
   VueFire Examples
+
 
 
 ## Getting Started
