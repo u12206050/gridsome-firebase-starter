@@ -10,15 +10,26 @@ For building static sites but that does not limit to how dynamic it can be clien
 
 ### Firebase
 
-  *Cloud Firestore* – Realtime nosql datastore
+**Cloud Firestore** – Realtime nosql datastore
 
-  *Firebase Authentication* – Supports social and email login
+**Firebase Authentication with FirebaseUI** – Supports social and email login
 
-  *Cloud Functions* – Execute custom written functions
+1. Login
+2. Register
+
+
+**Cloud Functions** – Execute custom written functions
 
 ### VueFire
 
   Keep subscription data updated in your views and components
+
+### Other
+
+  SASS
+  Loader component
+  Login Page
+  VueFire Examples
 
 
 ## Getting Started
