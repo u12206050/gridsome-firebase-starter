@@ -6,7 +6,7 @@
       </strong>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/">Login</g-link>
+        <g-link class="nav__link" to="/login">Login</g-link>
         <g-link class="nav__link" to="/about">About</g-link>
       </nav>
     </header>
@@ -31,7 +31,7 @@ body {
 }
 
 .layout {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;

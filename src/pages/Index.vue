@@ -7,7 +7,7 @@
     <h1>Hello, world!</h1>
 
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
+      Ready for an awesome Firebase & Gridsome powered app!
     </p>
 
     <p class="home-links">
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { db } from '@/fire'
+import { db } from '~/fire'
 
 const users = db.collection('users')
 export default {
@@ -41,9 +41,13 @@ export default {
   watch: {
     id: {
       // call it upon creation too
-      immediate: true,
+      immediate: false,
       handler(id) {
-        this.$bind('user', users.doc(id))
+        if (id) this.$bind('user', users.doc(id))
+        else {
+          this.$unbind('user')
+          this.user = null
+        }
       },
     },
   },

@@ -17,15 +17,16 @@ export default {
     }
   },
   mounted() {
+    const v = this
     fireUI.start('#firebaseui-auth-container', {
       callbacks: {
         signInSuccessWithAuthResult (authResult, redirectUrl) {
           // User successfully signed in
-          this.$emit('success', authResult)
+          v.$emit('success', authResult)
           return true;
         },
         uiShown () {
-          this.loading = false
+          v.loading = false
         }
       },
 
@@ -47,6 +48,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="sass">
+@import 'node_modules/firebaseui/dist/firebaseui';
 
 </style>
