@@ -1,0 +1,19 @@
+{
+  "name": "gridsome-app",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "firebase": "^5.10.1",
+    "firebaseui": "^3.6.0",
+    "gridsome": "^0.5.0",
+    "vuefire": "^2.0.0-alpha.22"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0"
+  }
+}
