@@ -4,13 +4,17 @@ Optionally use with the Backend Firebase starter that includes user roles, usefu
 
 ## What is inside
 
-Besides the libraries that are included, there are a few code examples to help you out.
+1. Ready to go firebase setup
+2. Login and logout using Firebase authentication
+3. Stores to keep everything in sync
+4. Code examples to get you running
+5. No style framework so you are free to choose
 
-### Gridsome
+### [Gridsome](https://gridsome.org/docs)
 
-For building static sites but that does not limit to how dynamic it can be client side
+Static site builder, but does not limit to how dynamic it can be client side
 
-### Firebase
+### [Firebase](https://firebase.google.com/docs)
 
 **Cloud Firestore** – Realtime nosql datastore
 
@@ -18,7 +22,7 @@ For building static sites but that does not limit to how dynamic it can be clien
 
 **Cloud Functions** – Execute custom written functions
 
-### VueFire
+### [VueFire](https://vuefire.vuejs.org/vuefire/binding-subscriptions.html#declarative-binding)
 
   Keep subscription data updated in your views and components
 
@@ -49,13 +53,3 @@ If you don't have gridsome installed run `npm install --global @gridsome/cli`
 4. Update the `.env.development` with your firebase credentials
 5. `gridsome develop` to start a local dev server at `http://localhost:8080`
 6. Happy coding 🎉🙌
-
-
-## LINKS
-
-[Gridsome Docs](https://gridsome.org/docs)
-
-[VueFire](https://vuefire.vuejs.org/vuefire/binding-subscriptions.html#declarative-binding)
-
-[Firebase Docs](https://firebase.google.com/docs)
-
