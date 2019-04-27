@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "gridsome build",
+    "deploy": "gridsome build && mv dist ../public && firebase deploy --only hosting",
     "develop": "gridsome develop",
     "explore": "gridsome explore"
   },

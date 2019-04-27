@@ -43,9 +43,11 @@ Static site builder, but does not limit to how dynamic it can be client side
   **Loading** – A simple loading component that you can use anywhere
 
 
-## Getting Started
+# Getting Started
 
 If you don't have gridsome installed run `npm install --global @gridsome/cli`
+
+## Frontend
 
 1. Clone the repo
 2. Run `npm install`
@@ -53,3 +55,20 @@ If you don't have gridsome installed run `npm install --global @gridsome/cli`
 4. Update the `.env.development` with your firebase credentials
 5. `gridsome develop` to start a local dev server at `http://localhost:8080`
 6. Happy coding 🎉🙌
+
+## Firebase
+
+1. Run `npm install -g firebase-tools` [Firebase cli](https://firebase.google.com/docs/cli)
+2. Create your project folder `mkdir my-project`
+3. Navigate to your project folder `cd my-project`
+4. Run `firebase login`
+5. Run `firebase init`
+
+## Deploying your site
+
+1. Build your static site `gridsome build``
+2. Move the dist folder into your project directory as public `mv dist ../public`
+3. To preview your static site run `firebase serve --only hosting`
+4. Deploy the site to [Firebase hosting](https://firebase.google.com/docs/hosting/) run `firebase deploy --only hosting`
+
+Tip: You can move your frontend project into your project folder for easier development ex. `my-project/website/` and then deploy with a single command within your website folder: `npm run deploy`
