@@ -16,10 +16,6 @@ For building static sites but that does not limit to how dynamic it can be clien
 
 **Firebase Authentication with FirebaseUI** – Supports social and email login
 
-1. Login
-2. Register
-
-
 **Cloud Functions** – Execute custom written functions
 
 ### VueFire
@@ -28,24 +24,19 @@ For building static sites but that does not limit to how dynamic it can be clien
 
 ### Other
 
-  Simple Store
+  **Simple Store** – Checkout how your clicks are being counted from the layout to where it is displayed
 
-    Checkout how your clicks are being counted from the layout to where it is displayed
+  **SCSS** – Locate and add more mixins in the `assets/sass` directory, all files are automatically globally available
 
-  SCSS
+  **[FlexGrid](http://flexboxgrid.com/)** – For all your basic layout needs
 
-    Locate and add mroe mixins in the `assets/sass` directory
+  **VueFire Examples** – Checkout Index.vue to see the examples
 
-  [FlexGrid](http://flexboxgrid.com/)
+### Components
 
-  Loader component
+  **Auth Set** – Set of login and logout components
 
-  Login Page
-
-    Enable various login options by removing comments
-
-  VueFire Examples
-
+  **Loading** – A simple loading component that you can use anywhere
 
 
 ## Getting Started

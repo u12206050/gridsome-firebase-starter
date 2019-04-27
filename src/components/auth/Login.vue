@@ -2,7 +2,7 @@
   <div class="Login">
     <Logout class="logout-btn" v-if="isLoggedIn"></Logout>
     <div v-show="!isLoggedIn" id="firebaseui-auth-container"></div>
-    <Loader v-if="loading" />
+    <Loading v-if="loading" />
   </div>
 </template>
 

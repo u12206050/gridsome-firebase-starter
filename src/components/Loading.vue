@@ -1,21 +1,21 @@
 <template>
-  <div class="Loader">Loading...</div>
+  <div class="Loading">Loading...</div>
 </template>
 
 <style lang="scss">
-.Loader {
-  .loader,
-  .loader:before,
-  .loader:after {
+.Loading {
+  .loading,
+  .loading:before,
+  .loading:after {
     border-radius: 50%;
     width: 2.5em;
     height: 2.5em;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    -webkit-animation: loader-animation 1.8s infinite ease-in-out;
-    animation: loader-animation 1.8s infinite ease-in-out;
+    -webkit-animation: loading-animation 1.8s infinite ease-in-out;
+    animation: loading-animation 1.8s infinite ease-in-out;
   }
-  .loader {
+  .loading {
     color: var(--primary-color);
     font-size: 10px;
     margin: 80px auto;
@@ -27,21 +27,21 @@
     -webkit-animation-delay: -0.16s;
     animation-delay: -0.16s;
   }
-  .loader:before,
-  .loader:after {
+  .loading:before,
+  .loading:after {
     content: '';
     position: absolute;
     top: 0;
   }
-  .loader:before {
+  .loading:before {
     left: -3.5em;
     -webkit-animation-delay: -0.32s;
     animation-delay: -0.32s;
   }
-  .loader:after {
+  .loading:after {
     left: 3.5em;
   }
-  @-webkit-keyframes loader-animation {
+  @-webkit-keyframes loading-animation {
     0%,
     80%,
     100% {
@@ -51,7 +51,7 @@
       box-shadow: 0 2.5em 0 0;
     }
   }
-  @keyframes loader-animation {
+  @keyframes loading-animation {
     0%,
     80%,
     100% {

@@ -2,7 +2,7 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from '~/layouts/Default.vue'
-import Loader from '~/components/Loader.vue'
+import Loading from '~/components/Loading.vue'
 import Logout from '~/components/auth/Logout.vue'
 
 import { firestorePlugin } from 'vuefire'
@@ -15,7 +15,7 @@ export default function (Vue, { router, head, isClient }) {
 
   // Set default global components
   Vue.component('Layout', DefaultLayout)
-  Vue.component('Loader', Loader)
+  Vue.component('Loading', Loading)
   Vue.component('Logout', Logout)
 
   // External cdn libraries
