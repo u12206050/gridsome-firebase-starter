@@ -4,6 +4,8 @@ Optionally use with the Backend Firebase starter that includes user roles, usefu
 
 ## What is inside
 
+Besides the libraries that are included, there are a few code examples to help you out.
+
 ### Gridsome
 
 For building static sites but that does not limit to how dynamic it can be client side
@@ -26,9 +28,15 @@ For building static sites but that does not limit to how dynamic it can be clien
 
 ### Other
 
-  SASS
+  Simple Store
 
-  Bootstrap Grid
+    Checkout how your clicks are being counted from the layout to where it is displayed
+
+  SCSS
+
+    Locate and add mroe mixins in the `assets/sass` directory
+
+  [FlexGrid](http://flexboxgrid.com/)
 
   Loader component
 

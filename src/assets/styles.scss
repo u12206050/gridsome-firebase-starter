@@ -1,25 +1,26 @@
-$primary-color: #5ed3a2;
-$header-height: 62px;
-$primary-bg: #f3f7f9;
-$secondary-bg: #0d2538;
-$primary-link-color: #3bba95;
-$border-color: #e1eaef;
-$success-bg: rgba(91,177,150,0.25);
-$space: 20px;
-$space-x2: 40px;
-$code-color: #f2f4f5;
-$code-color-block: #f2f4f5;
+@import 'css/layouts';
 
 :root {
-  --primary-color: $primary-color;
-  --header-height: $header-height;
-  --primary-bg: $primary-bg;
-  --secondary-bg: $secondary-bg;
-  --primary-link-color: $primary-link-color;
-  --border-color: $border-color;
-  --success-bg: $success-bg;
-  --space: $space;
-  --space-x2: $space-x2;
-  --code-color: $code-color;
-  --code-color-block: $code-color-block;
+  --primary-color: #B6CE61;
+  --header-height: 62px;
+  --primary-bg: #f3f7f9;
+  --secondary-bg: #0d2538;
+  --secondary-color: #e1eaef;
+  --primary-link-color: #8AD182;
+}
+
+* {
+  box-sizing: border-box;
+}
+p {
+  margin: .1rem 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }

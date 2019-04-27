@@ -2,17 +2,26 @@
   <Layout>
 
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
+    <div class="row middle-xs">
+      <g-image class="col-xs-5" alt="Gridsome Logo" src="~/assets/images/gridsome-logo.svg" width="300" />
+      <p class="col-xs-2 center-xs amp-sign">&</p>
+      <g-image class="col-xs-5" alt="Firebase Logo" src="~/assets/images/firebase-logo.png" width="300" />
+    </div>
 
     <h1>Hello, world!</h1>
 
-    <p>
-      Ready for an awesome Firebase & Gridsome powered app!
-    </p>
+    <div v-if="isLoggedIn">
+      <strong>You are logged in</strong>
+      <p>Checkout this block, it only shows if you are logged in.</p>
+    </div>
+    <hr>
+    <p>Ready for an awesome Firebase & Gridsome powered app!</p>
+
+    <p>You have clicked <strong v-text="clicks"></strong> times</p>
 
     <p class="home-links">
       <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://firebase.google.com/docs" target="_blank" rel="noopener">Firebase Docs</a>
     </p>
 
   </Layout>
@@ -31,6 +40,14 @@ export default {
       id: null,
       user: null,
       documents: [],
+    }
+  },
+  computed: {
+    isLoggedIn() {
+      return !!this.$auth.currentUser
+    },
+    clicks() {
+      return this.$store.clicks
     }
   },
   /* Example of VueFire Declarative binding https://vuefire.vuejs.org/vuefire/binding-subscriptions.html#declarative-binding */
@@ -54,8 +71,22 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .home-links a {
   margin-right: 1rem;
+  color: var(--primary-link-color);
+}
+
+.amp-sign {
+  font-size: 4rem;
+  font-family: -webkit-pictograph;
+  color: #424242;
+
+  @include tablet {
+    font-size: 6rem;
+  }
+  @include desktop {
+    font-size: 8rem;
+  }
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div class="Login">
-    <div id="firebaseui-auth-container"></div>
+    <Logout class="logout-btn" v-if="isLoggedIn"></Logout>
+    <div v-show="!isLoggedIn" id="firebaseui-auth-container"></div>
     <Loader v-if="loading" />
   </div>
 </template>
@@ -16,14 +17,20 @@ export default {
       loading: true
     }
   },
+  computed: {
+    isLoggedIn() {
+      return !!this.$auth.currentUser
+    }
+  },
   mounted() {
     const v = this
     fireUI.start('#firebaseui-auth-container', {
       callbacks: {
         signInSuccessWithAuthResult (authResult, redirectUrl) {
           // User successfully signed in
-          v.$emit('success', authResult)
-          return true;
+          v.$emit('success', auth.currentUser)
+
+          return false;
         },
         uiShown () {
           v.loading = false
@@ -32,7 +39,7 @@ export default {
 
       signInOptions: [
         // Email address and password
-        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        //firebase.auth.EmailAuthProvider.PROVIDER_ID,
 
         // List of OAuth providers supported.
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,

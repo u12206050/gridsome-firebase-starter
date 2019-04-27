@@ -3,7 +3,11 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 import Loader from '~/components/Loader.vue'
+import Logout from '~/components/auth/Logout.vue'
+
 import { firestorePlugin } from 'vuefire'
+import store from '~/store'
+import '~/assets/styles.scss'
 
 export default function (Vue, { router, head, isClient }) {
 
@@ -12,12 +16,9 @@ export default function (Vue, { router, head, isClient }) {
   // Set default global components
   Vue.component('Layout', DefaultLayout)
   Vue.component('Loader', Loader)
+  Vue.component('Logout', Logout)
 
   // External cdn libraries
-  head.link.push({
-    rel: 'stylesheet',
-    href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css'
-  })
   head.link.push({
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Roboto'

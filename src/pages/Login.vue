@@ -1,11 +1,10 @@
 <template>
   <Layout>
     <div class="row">
-      <div class="col-md-8 col-lg-6">
-
-      </div>
-      <div class="col-md-4 col-lg-6">
+      <div class="col-md-8 col-lg-6 center-xs">
         <h2>Login or register to continue</h2>
+      </div>
+      <div class="col-md-4 col-lg-6 first-sm">
         <Login @success="onSuccess" @cancel="onCancel" />
       </div>
     </div>
@@ -22,13 +21,10 @@ export default {
   components: {
     Login
   },
-  data() {
-    return {
-    }
-  },
   methods: {
     onSuccess() {
       // Navigate to Dashboard page
+      this.$router.push('/')
     },
     onCancel() {
       // Navigate to Home page
