@@ -31,7 +31,7 @@ Static site builder, but does not limit to how dynamic it can be client side
 
   **[FlexGrid](http://flexboxgrid.com/)** – For all your basic layout needs
 
-  **firesync.js** – Checkout Firesync.js to see the examples
+  **firesync.js** – Keep Firestore subscriptions in sync with store. Checkout Firesync.js to see the examples
 
 ### Components
 

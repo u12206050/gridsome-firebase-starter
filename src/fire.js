@@ -50,5 +50,7 @@ auth.onAuthStateChanged((currentUser) => {
 
 Vue.prototype.$auth = $auth
 
+firesync.onInit(db)
+
 export { firebase, auth, storage, functions, db }
 export const { GeoPoint, Timestamp, FieldValue } = firebase.firestore
