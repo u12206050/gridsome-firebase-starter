@@ -10,7 +10,7 @@
 
     <h1>Hello, world!</h1>
 
-    <div v-if="isLoggedIn">
+    <div v-if="$auth.isLoggedIn">
       <strong>You are logged in</strong>
       <p>Checkout this block, it only shows if you are logged in.</p>
     </div>
@@ -43,9 +43,6 @@ export default {
     }
   },
   computed: {
-    isLoggedIn() {
-      return !!this.$auth.currentUser
-    },
     clicks() {
       return this.$store.clicks
     }

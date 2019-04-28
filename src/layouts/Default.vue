@@ -10,7 +10,7 @@
       <nav class="nav row middle-xs">
         <g-link class="nav__link" to="/">Home</g-link>
         <g-link class="nav__link" to="/about">About</g-link>
-        <span class="row middle-xs" v-if="isLoggedIn">
+        <span class="row middle-xs" v-if="$auth.isLoggedIn">
           <Logout class="nav__link"></Logout>
           <img :src="authUser.photoURL" class="profile-img">
           <p>{{authUser.displayName}}</p>
@@ -43,10 +43,6 @@ export default {
     },
   },
   computed: {
-    /* Useful function to check if the user is logged in */
-    isLoggedIn() {
-      return !!this.$auth.currentUser
-    },
     /* Useful function to get the profile of the current user */
     authUser() {
       return this.$auth.currentUser

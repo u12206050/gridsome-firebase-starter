@@ -1,7 +1,7 @@
 <template>
   <div class="Login">
-    <Logout class="logout-btn" v-if="isLoggedIn"></Logout>
-    <div v-show="!isLoggedIn" id="firebaseui-auth-container"></div>
+    <Logout class="logout-btn" v-if="$auth.isLoggedIn"></Logout>
+    <div v-show="!$auth.isLoggedIn" id="firebaseui-auth-container"></div>
     <Loading v-if="loading" />
   </div>
 </template>
@@ -15,11 +15,6 @@ export default {
   data() {
     return {
       loading: true
-    }
-  },
-  computed: {
-    isLoggedIn() {
-      return !!this.$auth.currentUser
     }
   },
   mounted() {

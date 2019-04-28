@@ -18,7 +18,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Loading', Loading)
   Vue.component('Logout', Logout)
 
-  // External cdn libraries
+  // External cdn libraries, example to add font and styles
   head.link.push({
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Roboto'
