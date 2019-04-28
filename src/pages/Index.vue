@@ -45,25 +45,17 @@ export default {
   computed: {
     clicks() {
       return this.$store.clicks
-    }
-  },
-  /* Example of VueFire Declarative binding https://vuefire.vuejs.org/vuefire/binding-subscriptions.html#declarative-binding */
-  firestore: {
-    documents: db.collection('documents'),
-  },
-  /* Example of VueFire Programmatic binding https://vuefire.vuejs.org/vuefire/binding-subscriptions.html#programmatic-binding */
-  watch: {
-    id: {
-      // call it upon creation too
-      immediate: false,
-      handler(id) {
-        if (id) this.$bind('user', users.doc(id))
-        else {
-          this.$unbind('user')
-          this.user = null
-        }
-      },
     },
+    user() {
+      /**
+       * This will get updated because
+       * of the subscription in firesync.js
+       */
+      return this.$store.user
+    },
+    documents() {
+      return this.$store.documents
+    }
   },
 }
 </script>

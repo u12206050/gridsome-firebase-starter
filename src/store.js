@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 const store = Vue.observable({
+  documents: null,
   clicks: 0
 })
 

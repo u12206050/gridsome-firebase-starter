@@ -22,9 +22,6 @@ Static site builder, but does not limit to how dynamic it can be client side
 
 **Cloud Functions** – Execute custom written functions
 
-### [VueFire](https://vuefire.vuejs.org/vuefire/binding-subscriptions.html#declarative-binding)
-
-  Keep subscription data updated in your views and components
 
 ### Other
 
@@ -34,7 +31,7 @@ Static site builder, but does not limit to how dynamic it can be client side
 
   **[FlexGrid](http://flexboxgrid.com/)** – For all your basic layout needs
 
-  **VueFire Examples** – Checkout Index.vue to see the examples
+  **firesync.js** – Checkout Firesync.js to see the examples
 
 ### Components
 

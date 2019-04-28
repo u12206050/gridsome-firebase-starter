@@ -6,6 +6,8 @@ import 'firebase/functions'
 import 'firebase/storage'
 import 'firebase/messaging'
 
+import firesync from './firesync'
+
 firebase.initializeApp({
   apiKey: process.env.GRIDSOME_API_KEY,
   authDomain: process.env.GRIDSOME_AUTH_DOMAIN,
@@ -17,6 +19,7 @@ firebase.initializeApp({
 
 const db = firebase.firestore()
 db.enablePersistence()
+
 const functions = firebase.functions()
 const storage = firebase.storage()
 
@@ -26,17 +29,22 @@ auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
 
 auth.isLoggedIn = false
 auth.roles = {}
+auth.userId = null
 const $auth = Vue.observable(auth)
 
 auth.onAuthStateChanged((currentUser) => {
   if (currentUser) {
     $auth.isLoggedIn = true
-    auth.getIdTokenResult().then(userToken => {
+    $auth.userId = currentUser.uid
+    currentUser.getIdTokenResult().then(userToken => {
       $auth.roles = userToken.claims
     })
+    firesync.onLogin(db, $auth.userId)
   } else {
+    $auth.userId = null
     $auth.isLoggedIn = false
     $auth.roles = {}
+    firesync.onLogout()
   }
 })
 
