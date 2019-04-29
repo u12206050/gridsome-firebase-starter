@@ -36,14 +36,16 @@ Vue.prototype.$docData = docData
  * @param {DocumentReference | CollectionReference} ref
  * @param {String} property
  * @param {Function} cb (optional)
+ * @param {Observable} store (optional)
  */
-function subscribe(ref, property, cb) {
+function subscribe(ref, property, cb, state = store) {
   return {
     ref,
     property,
     close: ref.onSnapshot((snap) => {
-      Vue.set(store, property, snap.id ? docData(snap) : snap.docs.map(docData))
-      if (cb) cb()
+      const result = snap.id ? docData(snap) : snap.docs.map(docData)
+      Vue.set(state, property, result)
+      if (cb) cb(result)
     }, (err) => console.warn('Subscribe Error: ', err))
   }
 }
