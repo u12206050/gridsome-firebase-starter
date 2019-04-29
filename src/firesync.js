@@ -1,4 +1,8 @@
 /**
+ * Firesync
+ * Author: Gerard Lamusse
+ * Version: 1.0
+ *
  * Add new subscriptions further down
  */
 

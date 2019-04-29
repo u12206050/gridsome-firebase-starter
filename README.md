@@ -1,6 +1,4 @@
-# Frontend Starter for Gridsome & Firebase using VueFire
-
-Optionally use with the Backend Firebase starter that includes user roles, useful functions and rules.
+# Frontend Starter for Gridsome & Firebase
 
 ## What is inside
 
@@ -25,13 +23,14 @@ Static site builder, but does not limit to how dynamic it can be client side
 
 ### Other
 
+  **Firesync** – Keep Firestore subscriptions in sync with store. Checkout `firesync.js` to see the examples
+
   **Simple Store** – Checkout how your clicks are being counted from the layout to where it is displayed
 
   **SCSS** – Locate and add more mixins in the `assets/sass` directory, all files are automatically globally available
 
   **[FlexGrid](http://flexboxgrid.com/)** – For all your basic layout needs
 
-  **firesync.js** – Keep Firestore subscriptions in sync with store. Checkout Firesync.js to see the examples
 
 ### Components
 
