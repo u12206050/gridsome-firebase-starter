@@ -89,3 +89,36 @@ export default {
     })
   }
 }
+
+/**
+ * Bind a local property to firebase subscription
+ * Within your components you can call:
+ *
+ * this.$bind(db.collection('documents'), docs, () => {
+ *  this.loading = false
+ * })
+ */
+Vue.prototype.$bind = function (ref, property, cb) {
+  if (!this.__bindings) {
+    this.__bindings = {}
+    this.$options.beforeDestroy.push(() => {
+      Object.values(this.__bindings).forEach(sub => sub.close())
+    })
+  }
+  this.__bindings[property] = subscribe(ref, property, cb, this)
+}
+
+
+/**
+ * Unbind a local property
+ *
+ * Note that you don't have to manually call unbind
+ * since that happens right before the component is destroyed
+ */
+Vue.prototype.$unbind = function (property, value) {
+  if (this.__bindings && this.__bindings[property]) {
+    this.__bindings[property].close()
+    delete this.__bindings[property]
+  }
+  if (typeof value !== 'undefined') this[property] = value
+}

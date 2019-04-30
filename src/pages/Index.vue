@@ -40,7 +40,15 @@ export default {
       id: null,
       user: null,
       documents: [],
+      pages: null
     }
+  },
+  mounted() {
+    /**
+     * This will update the `this.pages` property
+     * with the data from the pages collection, thanks to firesync.js
+     */
+    this.$bind(db.collection('pages').where('words', '>', 200), pages)
   },
   computed: {
     clicks() {
