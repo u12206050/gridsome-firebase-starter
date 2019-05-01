@@ -10,7 +10,6 @@
 import { firebase, auth } from '~/fire'
 import firebaseui from 'firebaseui'
 
-const fireUI = new firebaseui.auth.AuthUI(auth)
 export default {
   data() {
     return {
@@ -19,6 +18,7 @@ export default {
   },
   mounted() {
     const v = this
+    const fireUI = new firebaseui.auth.AuthUI(auth)
     fireUI.start('#firebaseui-auth-container', {
       callbacks: {
         signInSuccessWithAuthResult (authResult, redirectUrl) {

@@ -5,21 +5,25 @@
         <h2>Login or register to continue</h2>
       </div>
       <div class="col-md-4 col-lg-6 first-sm">
-        <Login @success="onSuccess" @cancel="onCancel" />
+        <Login v-if="show" @success="onSuccess" @cancel="onCancel" />
+        <button v-else @click="show = true">Login / Register</button>
       </div>
     </div>
   </Layout>
 </template>
 
 <script>
-import Login from '~/components/auth/Login.vue'
-
 export default {
   metaInfo: {
     title: 'Login'
   },
   components: {
-    Login
+    Login: () => import('~/components/auth/Login.vue')
+  },
+  data() {
+    return {
+      show: false
+    }
   },
   methods: {
     onSuccess() {
