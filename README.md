@@ -68,3 +68,39 @@ If you don't have gridsome installed run `npm install --global @gridsome/cli`
 4. Deploy the site to [Firebase hosting](https://firebase.google.com/docs/hosting/) run `firebase deploy --only hosting`
 
 Tip: You can move your frontend project into your project folder for easier development ex. `my-project/website/` and then deploy with a single command within your website folder: `npm run deploy`
+
+## Functions
+
+On every Vue component/view you have access to the following:
+
+ `this.$db`: Used for creating references and fetching data from Firestore. Same as `firebase.firestore()`
+
+    Example: `this.$db.collection('documents').get().then(snapshot => console.log(snapshot.size))`
+
+  `this.$bind`: Bind the results of a firestore reference to a property on the component
+
+    Example: `this.$bind(this.$db.collection('documents'), 'documents')`: Now on `this.documents` you can access the documents and have the automatically be updated.
+
+  `this.$unbind`: Unbinds the property so it no longer gets updates.
+
+    Example: `this.$unbind('documents', null?): The 2nd argument is optional. To leave the property untouched in its current state leave out the `null`
+
+  `this.$functions`: Most commonly used for creating requests to Firebase functions. Same s `firebase.functions()`
+
+    Example: `this.$functions.httpsCallable('getTime')().then(time => console.log(time))`
+
+  `this.$auth`: This is extended on the `firebase.auth()` object which besides the `logout()` and `currentUser` methods and function it also has:
+
+    `this.$auth.isLoggedIn`: If the user is logged in or not
+
+    `this.$auth.userId`: The user id of the currently logged in user
+
+    `this.$auth.roles`: An object of roles the user has been assigned
+
+  `this.$firestore`: Contains the useful field properties to use when writing to db.
+
+    `this.$firestore.GeoPoint`
+
+    `this.$firestore.Timestamp`
+
+    `this.$firestore.FieldValue`
