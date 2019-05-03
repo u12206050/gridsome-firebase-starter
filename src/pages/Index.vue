@@ -28,9 +28,6 @@
 </template>
 
 <script>
-import { db } from '~/fire'
-
-const users = db.collection('users')
 export default {
   metaInfo: {
     title: 'Hello, world!'
@@ -48,7 +45,7 @@ export default {
      * This will update the `this.pages` property
      * with the data from the pages collection, thanks to firesync.js
      */
-    this.$bind(db.collection('pages').where('words', '>', 200), pages)
+    // this.$bind(this.$db.collection('pages').where('words', '>', 200), pages)
   },
   computed: {
     clicks() {

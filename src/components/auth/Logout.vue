@@ -2,11 +2,10 @@
   <span @click="logout" class="Logout">Logout</span>
 </template>
 <script>
-import { auth } from '~/fire'
 export default {
   methods: {
     logout() {
-      auth.signOut().then(() => {
+      this.$auth.signOut().then(() => {
         alert('loggedout')
         this.$router.push('/')
       }).catch((error) => {

@@ -4,6 +4,7 @@
 import DefaultLayout from '~/layouts/Default.vue'
 import Loading from '~/components/Loading.vue'
 import Logout from '~/components/auth/Logout.vue'
+import '~/fire.js'
 import '~/assets/styles.scss'
 
 export default function (Vue, { router, head, isClient }) {
@@ -17,5 +18,30 @@ export default function (Vue, { router, head, isClient }) {
   head.link.push({
     rel: 'stylesheet',
     href: 'https://fonts.googleapis.com/css?family=Roboto'
+  }, {
+    rel: 'stylesheet',
+    href: 'https://cdn.firebase.com/libs/firebaseui/3.6.0/firebaseui.css'
+  })
+  head.script.push({
+    rel: 'javascript',
+    src: 'https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js'
+  }, {
+    rel: 'javascript',
+    src: 'https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js'
+  }, {
+    rel: 'javascript',
+    src: 'https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js'
+  }, {
+    rel: 'javascript',
+    src: 'https://www.gstatic.com/firebasejs/5.11.1/firebase-functions.js'
+  }, {
+    rel: 'javascript',
+    src: 'https://www.gstatic.com/firebasejs/5.11.1/firebase-storage.js'
+  }, {
+    rel: 'javascript',
+    src: '/fireInit.js'
+  }, {
+    rel: 'javascript',
+    src: 'https://cdn.firebase.com/libs/firebaseui/3.6.0/firebaseui.js'
   })
 }

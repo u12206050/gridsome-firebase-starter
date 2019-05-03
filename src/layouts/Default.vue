@@ -45,7 +45,7 @@ export default {
   computed: {
     /* Useful function to get the profile of the current user */
     authUser() {
-      return this.$auth.currentUser
+      return this.$auth && this.$auth.currentUser
     }
   },
   watch: {
