@@ -8,5 +8,13 @@
 module.exports = function (api) {
   api.loadSource(store => {
     // Use the Data store API here: https://gridsome.org/docs/data-store-api
+
+    /* Example of a dynamic route */
+    /*
+    store.addContentType({
+      typeName: 'Order',
+      route: '/order/:orderId'
+    }).addNode({ orderId: 0 })
+    */
   })
 }

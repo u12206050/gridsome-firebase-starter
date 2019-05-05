@@ -45,12 +45,11 @@ If you don't have gridsome installed run `npm install --global @gridsome/cli`
 
 ## Frontend
 
-1. Clone the repo
-2. Run `npm install`
-3. Copy the `.env.example` file and rename to `.env.development`
-4. Update the `.env.development` with your firebase credentials
-5. `gridsome develop` to start a local dev server at `http://localhost:8080`
-6. Happy coding 🎉🙌
+1. Clone the repo or run `gridsome create website https://github.com/u12206050/gridsome-firebase-starter.git` to create the site in a folder called `website`
+2. Copy the `.env.example` file and rename to `.env.development`
+3. Update the `.env.development` with your firebase credentials
+4. `gridsome develop` to start a local dev server at `http://localhost:8080`
+5. Happy coding 🎉🙌
 
 ## Firebase
 
@@ -61,6 +60,8 @@ If you don't have gridsome installed run `npm install --global @gridsome/cli`
 5. Run `firebase init`
 
 ## Deploying your site
+
+Update your enviroment variables in a file called `.env.production`
 
 1. Build your static site `gridsome build``
 2. Move the dist folder into your project directory as public `mv dist ../public`

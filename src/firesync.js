@@ -65,7 +65,7 @@ export default {
     /**
      * Add public subscriptions here on data for everyone
      */
-    subscribe(db.collection('documents').where('count', '>', '20'), 'documents', () => {
+    store.$bind(db.collection('documents').where('count', '>', '20'), 'documents', () => {
       if (Array.isArray(store.documents)) {
         console.log(store.documents.length)
         store.loadedDocuments = true
@@ -101,11 +101,15 @@ export default {
 Vue.prototype.$bind = function (ref, property, cb) {
   if (!this.__bindings) {
     this.__bindings = {}
-    this.$options.beforeDestroy.push(() => {
+    this.$options.destroyed.push(() => {
       Object.values(this.__bindings).forEach(sub => sub.close())
     })
   }
   this.__bindings[property] = subscribe(ref, property, cb, this)
+}
+
+store.$bind = function(ref, property, cb) {
+  return store.__bindings[property] = subscribe(ref, property, cb)
 }
 
 
@@ -121,4 +125,12 @@ Vue.prototype.$unbind = function (property, value) {
     delete this.__bindings[property]
   }
   if (typeof value !== 'undefined') this[property] = value
+}
+
+store.$unbind = function(property, value) {
+  if (store.__bindings[property]) {
+    store.__bindings[property].close()
+    delete store.__bindings[property]
+  }
+  if (typeof value !== 'undefined') store[property] = value
 }
