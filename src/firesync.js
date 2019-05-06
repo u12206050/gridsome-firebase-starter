@@ -3,13 +3,11 @@
  * Author: Gerard Lamusse
  * Version: 1.0
  *
- * Add new subscriptions further down
+ * Add your subscriptions within the functions at the bottom of the file.
  */
 
 import store from './store'
 import Vue from 'vue'
-
-const subscriptions = []
 
 /**
  * Shortcut function to give you a data object
@@ -47,46 +45,6 @@ function subscribe(ref, property, cb, state = store) {
       Vue.set(state, property, result)
       if (cb) cb(result)
     }, (err) => console.warn('Subscribe Error: ', err))
-  }
-}
-
-/**
- *
- * ::::ADD SUBSCRIPTIONS HERE::::
- * Subscriptions will sync to the $store
- *
- * Setup: `subscribe(ref, property, callbackFn?)`
- *
- * Access: `this.$store[property]`
- *
-*/
-export default {
-  onInit(db) {
-    /**
-     * Add public subscriptions here on data for everyone
-     */
-    store.$bind(db.collection('documents').where('count', '>', '20'), 'documents', () => {
-      if (Array.isArray(store.documents)) {
-        console.log(store.documents.length)
-        store.loadedDocuments = true
-      }
-    })
-  },
-  onLogin(db, uid) {
-    /**
-     * Add private subscriptions here
-     * that require a logged in user
-     */
-    subscriptions.push(
-      subscribe(db.collection('users').doc(uid), 'user'),
-    )
-  },
-  onLogout() {
-    /* Unsubscribes from private subscriptions */
-    subscriptions.forEach(sub => {
-      store[sub.property] = null
-      sub.close()
-    })
   }
 }
 
@@ -133,4 +91,34 @@ store.$unbind = function(property, value) {
     delete store.__bindings[property]
   }
   if (typeof value !== 'undefined') store[property] = value
+}
+
+
+/**
+ *
+ * ::::ADD SUBSCRIPTIONS HERE::::
+ * Subscriptions will sync to the $store
+ *
+ * Setup: `subscribe(ref, property, callbackFn?)`
+ *
+ * Access: `this.$store[property]`
+ *
+*/
+export default {
+  onInit(db) {
+    /** Add public subscriptions here */
+    store.$bind(db.collection('rates'), 'rates', () => {
+      if (Array.isArray(store.rates)) {
+        store.loadedExchangeRates = true
+      }
+    })
+  },
+  onLogin(db, uid) {
+    /** Add private, user only subscriptions here */
+    store.$bind(db.collection('users').doc(uid), 'user')
+  },
+  onLogout() {
+    /* Unsubscribes from private subscriptions */
+    store.$unbind('user', null)
+  }
 }
