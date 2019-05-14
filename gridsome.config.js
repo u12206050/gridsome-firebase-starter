@@ -4,6 +4,7 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const path = require('path')
+const { db } = require('gridsome-source-firestore')
 
 function addStyleResource (rule) {
   rule.use('style-resource')
@@ -17,7 +18,30 @@ function addStyleResource (rule) {
 
 module.exports = {
   siteName: 'Gridsome & Firebase',
-  plugins: [],
+  plugins: [{
+    use: 'gridsome-source-firestore',
+    debug: true, // Default false
+    options: {
+      collections: [
+        {
+          ref: db.collection('topics'),
+          slug: (doc, asSlug) => {
+            return `/topics/${asSlug(doc.data.title)}`
+          },
+          children: [
+            {
+              ref: (parentDoc) => {
+                return parentDoc.ref.collection('posts')
+              },
+              slug: (doc, asSlug) => {
+                return `/${asSlug(doc.data.title)}`
+              },
+            }
+          ]
+        }
+      ]
+    }
+  }],
   chainWebpack: config => {
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
     types.forEach(type => addStyleResource(config.module.rule('scss').oneOf(type)))
