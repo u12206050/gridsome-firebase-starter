@@ -8,7 +8,13 @@
       <g-image class="col-xs-5" alt="Firebase Logo" src="~/assets/images/firebase-logo.png" width="300" />
     </div>
 
-    <h1>Hello, world!</h1>
+    <h2>Popular Topics</h2>
+    <hr/>
+    <div class="row">
+      <template v-for="topic in topics">
+        <g-link :key="topic.id" :to="topic.path"><h2>{{topic.name}}</h2></g-link>
+      </template>
+    </div>
 
     <div v-if="$auth.isLoggedIn">
       <strong>You are logged in</strong>
@@ -27,10 +33,28 @@
   </Layout>
 </template>
 
+<page-query>
+query Topics {
+  allFireTopics {
+    edges {
+      node {
+        id
+        name
+        image
+        path
+        posts: belongsTo {
+          count: totalCount
+        }
+      }
+    }
+  }
+}
+</page-query>
+
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Gridsome Firebase Starter'
   },
   data() {
     return {
@@ -48,6 +72,9 @@ export default {
     // this.$bind(this.$db.collection('pages').where('words', '>', 200), pages)
   },
   computed: {
+    topics() {
+      return this.$page.allFireTopics.edges && this.$page.allFireTopics.edges.map(e => e.node)
+    },
     clicks() {
       return this.$store.clicks
     },

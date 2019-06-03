@@ -18,7 +18,13 @@
         <g-link v-else class="nav__link" to="/login">Login</g-link>
       </nav>
     </header>
-    <slot/>
+    <main>
+      <slot/>
+    </main>
+    <footer>
+      <p>All Copyright Reserved 2019</p>
+      <p><a href="https://twitter.com/GLamusse">@GLamusse</a></p>
+    </footer>
   </div>
 </template>
 
@@ -69,12 +75,17 @@ query {
 </static-query>
 
 <style lang="scss">
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-  background: var(--primary-bg);
+
+
+main {
+  min-height: calc(100vh - 228px);
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #E8EAF6;
 }
 
 .layout {

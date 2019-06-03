@@ -18,30 +18,43 @@ function addStyleResource (rule) {
 
 module.exports = {
   siteName: 'Gridsome & Firebase',
-  plugins: [{
-    use: 'gridsome-source-firestore',
-    debug: true, // Default false
-    options: {
-      collections: [
-        {
-          ref: db.collection('topics'),
-          slug: (doc, asSlug) => {
-            return `/topics/${asSlug(doc.data.title)}`
+  plugins: [
+    {
+      use: 'gridsome-source-firestore',
+      options: {
+        debug: true,
+        collections: [
+          {
+            ref: db.collection('posts').where('status', '==', '1'),
+            slug: 'title',
+            children: [{
+              ref: (postDoc) => {
+                return postDoc.ref.collection('comments').limit(10)
+              }
+            }]
           },
-          children: [
-            {
-              ref: (parentDoc) => {
-                return parentDoc.ref.collection('posts')
-              },
-              slug: (doc, asSlug) => {
-                return `/${asSlug(doc.data.title)}`
-              },
+          {
+            ref: db.collection('topics'),
+            slug: (doc, slugify) => {
+              return `/topics/${slugify(doc.data.name)}`
             }
-          ]
-        }
-      ]
+          },
+          {
+            ref: db.collection('tags'),
+            slug: (doc, slugify) => {
+              return `/tags/${slugify(doc.data.name)}`
+            },
+          },
+          {
+            ref: db.collection('authors'),
+            slug: (doc, slugify) => {
+              return `/authors/${slugify(doc.data.name)}`
+            }
+          },
+        ]
+      }
     }
-  }],
+  ],
   chainWebpack: config => {
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
     types.forEach(type => addStyleResource(config.module.rule('scss').oneOf(type)))

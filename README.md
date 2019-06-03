@@ -74,23 +74,23 @@ Tip: You can move your frontend project into your project folder for easier deve
 
 On every Vue component/view you have access to the following:
 
- `this.$db`: Used for creating references and fetching data from Firestore. Same as `firebase.firestore()`
+  **`this.$db`**: Used for creating references and fetching data from Firestore. Same as `firebase.firestore()`
 
     Example: `this.$db.collection('documents').get().then(snapshot => console.log(snapshot.size))`
 
-  `this.$bind`: Bind the results of a firestore reference to a property on the component
+  **`this.$bind`**: Bind the results of a firestore reference to a property on the component
 
     Example: `this.$bind(this.$db.collection('documents'), 'documents')`: Now on `this.documents` you can access the documents and have the automatically be updated.
 
-  `this.$unbind`: Unbinds the property so it no longer gets updates.
+  **`this.$unbind`**: Unbinds the property so it no longer gets updates.
 
     Example: `this.$unbind('documents', null?): The 2nd argument is optional. To leave the property untouched in its current state leave out the `null`
 
-  `this.$functions`: Most commonly used for creating requests to Firebase functions. Same s `firebase.functions()`
+  **`this.$functions`**: Most commonly used for creating requests to Firebase functions. Same s `firebase.functions()`
 
     Example: `this.$functions.httpsCallable('getTime')().then(time => console.log(time))`
 
-  `this.$auth`: This is extended on the `firebase.auth()` object which besides the `logout()` and `currentUser` methods and function it also has:
+  **`this.$auth**`**: This is extended on the `firebase.auth()` object which besides the `logout()` and `currentUser` methods and function it also has:
 
     `this.$auth.isLoggedIn`: If the user is logged in or not
 
@@ -98,10 +98,14 @@ On every Vue component/view you have access to the following:
 
     `this.$auth.roles`: An object of roles the user has been assigned
 
-  `this.$firestore`: Contains the useful field properties to use when writing to db.
+  **`this.$firestore`**: Contains the useful field properties to use when writing to db.
 
     `this.$firestore.GeoPoint`
 
     `this.$firestore.Timestamp`
 
     `this.$firestore.FieldValue`
+
+## Other
+
+  `npm run build`: Will build your project and test your **bundle size** according to the size limits set in `package.json`

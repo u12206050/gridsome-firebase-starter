@@ -3,16 +3,31 @@
   "license": "MIT",
   "author": "Gerard Lamusse",
   "scripts": {
-    "build": "gridsome build",
-    "deploy": "gridsome build && mv dist ../public && firebase deploy --only hosting",
+    "start": "gridsome develop",
+    "test": "bundlesize",
+    "build": "gridsome build && bundlesize",
     "develop": "gridsome develop",
     "explore": "gridsome explore"
   },
+  "bundlesize": [
+    {
+      "path": "./dist/assets/js/component--*.js",
+      "maxSize": "10 kB"
+    },
+    {
+      "path": "./dist/assets/js/app.*.js",
+      "maxSize": "80 kB"
+    },
+    {
+      "path": "./dist/assets/js/page-query.*.js",
+      "maxSize": "10 kB"
+    }
+  ],
   "dependencies": {
     "firebase": "^5.11.1",
-    "firebaseui": "^3.6.0",
+    "firebaseui": "^3.6.1",
     "gridsome": "^0.5.0",
-    "gridsome-source-firestore": "^0.7.0",
+    "gridsome-source-firestore": "^0.8.1",
     "vue-router": "^3.0.6"
   },
   "keywords": [
@@ -21,6 +36,7 @@
     "firestore"
   ],
   "devDependencies": {
+    "bundlesize": "^0.17.2",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
     "style-resources-loader": "^1.2.1"
