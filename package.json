@@ -6,6 +6,7 @@
     "start": "gridsome develop",
     "test": "bundlesize",
     "build": "gridsome build && bundlesize",
+    "deploy": "gridsome build && mv dist ../public && firebase deploy --only hosting",
     "develop": "gridsome develop",
     "explore": "gridsome explore"
   },
@@ -28,7 +29,7 @@
     "firebaseui": "^3.6.1",
     "gridsome": "^0.5.0",
     "gridsome-source-firestore": "^0.8.1",
-    "vue-router": "^3.0.6"
+    "vue-router": "^3.1.2"
   },
   "keywords": [
     "gridsome",
@@ -38,7 +39,7 @@
   "devDependencies": {
     "bundlesize": "^0.17.2",
     "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^7.3.1",
     "style-resources-loader": "^1.2.1"
   }
 }

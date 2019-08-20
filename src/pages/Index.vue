@@ -59,8 +59,6 @@ export default {
   data() {
     return {
       id: null,
-      user: null,
-      documents: [],
       pages: null
     }
   },
