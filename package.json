@@ -25,11 +25,8 @@
     }
   ],
   "dependencies": {
-    "firebase": "^5.11.1",
-    "firebaseui": "^3.6.1",
-    "gridsome": "^0.5.0",
-    "gridsome-source-firestore": "^0.8.1",
-    "vue-router": "^3.1.2"
+    "gridsome": "^0.6.0",
+    "gridsome-source-firestore": "^1.0.1"
   },
   "keywords": [
     "gridsome",

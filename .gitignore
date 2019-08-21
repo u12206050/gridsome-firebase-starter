@@ -7,3 +7,4 @@ dist
 .env
 .env.*
 fg_images/
+firebase-adminsdk-credentials.json

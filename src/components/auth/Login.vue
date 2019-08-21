@@ -37,7 +37,7 @@ export default {
           signInFlow: 'popup',
           signInOptions: [
             // Email address and password
-            //firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            firebase.auth.EmailAuthProvider.PROVIDER_ID,
 
             // List of OAuth providers supported.
             firebase.auth.GoogleAuthProvider.PROVIDER_ID,

@@ -20,28 +20,25 @@ export default function (Vue, { router, head, isClient }) {
     href: 'https://fonts.googleapis.com/css?family=Roboto'
   }, {
     rel: 'stylesheet',
-    href: 'https://cdn.firebase.com/libs/firebaseui/3.6.0/firebaseui.css'
+    href: 'https://cdn.firebase.com/libs/firebaseui/4.1.0/firebaseui.css'
   })
   head.script.push({
     rel: 'javascript',
-    src: 'https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js'
+    body: true,
+    async: true,
+    defer: true,
+    src: 'https://www.gstatic.com/firebasejs/6.4.0/firebase.js'
   }, {
     rel: 'javascript',
-    src: 'https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js'
-  }, {
-    rel: 'javascript',
-    src: 'https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js'
-  }, {
-    rel: 'javascript',
-    src: 'https://www.gstatic.com/firebasejs/5.11.1/firebase-functions.js'
-  }, {
-    rel: 'javascript',
-    src: 'https://www.gstatic.com/firebasejs/5.11.1/firebase-storage.js'
-  }, {
-    rel: 'javascript',
+    body: true,
+    async: true,
+    defer: true,
     src: '/fireInit.js'
   }, {
     rel: 'javascript',
-    src: 'https://cdn.firebase.com/libs/firebaseui/3.6.0/firebaseui.js'
+    body: true,
+    async: true,
+    defer: true,
+    src: 'https://cdn.firebase.com/libs/firebaseui/4.1.0/firebaseui.js'
   })
 }

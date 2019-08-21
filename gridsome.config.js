@@ -4,7 +4,6 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const path = require('path')
-const { db } = require('gridsome-source-firestore')
 
 function addStyleResource (rule) {
   rule.use('style-resource')
@@ -17,36 +16,45 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-  siteName: 'Gridsome & Firebase',
+  siteName: 'Gridsome+Firestore Starter',
   plugins: [
     {
       use: 'gridsome-source-firestore',
       options: {
+        credentials: require('./firebase-adminsdk-credentials.json'),
         debug: true,
         collections: [
           {
-            ref: db.collection('posts').where('status', '==', '1'),
+            ref: (db) => {
+              return db.collection('posts').where('status', '==', '1')
+            },
             slug: 'title',
             children: [{
-              ref: (postDoc) => {
+              ref: (db, postDoc) => {
                 return postDoc.ref.collection('comments').limit(10)
               }
             }]
           },
           {
-            ref: db.collection('topics'),
+            ref: (db) => {
+              return db.collection('topics')
+            },
             slug: (doc, slugify) => {
               return `/topics/${slugify(doc.data.name)}`
             }
           },
           {
-            ref: db.collection('tags'),
+            ref: (db) => {
+              return db.collection('tags')
+            },
             slug: (doc, slugify) => {
               return `/tags/${slugify(doc.data.name)}`
-            },
+            }
           },
           {
-            ref: db.collection('authors'),
+            ref: (db) => {
+              return db.collection('authors')
+            },
             slug: (doc, slugify) => {
               return `/authors/${slugify(doc.data.name)}`
             }
