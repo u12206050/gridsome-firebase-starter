@@ -107,11 +107,15 @@ store.$unbind = function(property, value) {
 export default {
   onInit(db) {
     /** Add public subscriptions here */
+
+    /* EXAMPLE */
+    /*
     store.$bind(db.collection('rates'), 'rates', () => {
       if (Array.isArray(store.rates)) {
         store.loadedExchangeRates = true
       }
     })
+    */
   },
   onLogin(db, uid) {
     /** Add private, user only subscriptions here */
