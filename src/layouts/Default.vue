@@ -123,5 +123,6 @@ footer {
   object-position: center;
   border-radius: 2rem;
   margin-left: 1rem;
+  margin-right: .5rem;
 }
 </style>
