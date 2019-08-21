@@ -1,7 +1,7 @@
 import Vue from 'vue'
 
 const store = Vue.observable({
-  __bindings = {}, // DO NOT REMOVE
+  __bindings: {}, // DO NOT REMOVE
   documents: null,
   clicks: 0
 })

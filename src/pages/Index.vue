@@ -9,21 +9,20 @@
     </div>
 
     <h2>Popular Topics</h2>
-    <hr/>
     <div class="row">
       <template v-for="topic in topics">
-        <g-link :key="topic.id" :to="topic.path"><h2>{{topic.name}}</h2></g-link>
+        <g-link :key="topic.id" :to="topic.path"><h2 class="topic">{{topic.name}}</h2></g-link>
       </template>
     </div>
 
-    <div v-if="$auth.isLoggedIn">
+    <div class="top-section" v-if="$auth.isLoggedIn">
       <strong>You are logged in</strong>
       <p>Checkout this block, it only shows if you are logged in.</p>
     </div>
-    <hr>
-    <p>Ready for an awesome Firebase & Gridsome powered app!</p>
-
-    <p>You have clicked <strong v-text="clicks"></strong> times</p>
+    <div class="section">
+      <p>Ready for an awesome Firebase & Gridsome powered app!</p>
+      <p>You have clicked <strong v-text="clicks"></strong> times</p>
+    </div>
 
     <p class="home-links">
       <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
@@ -107,5 +106,19 @@ export default {
   @include desktop {
     font-size: 8rem;
   }
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.top-section {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+.topic {
+  margin-right: 1rem;
+  margin-left: 3rem;
 }
 </style>
