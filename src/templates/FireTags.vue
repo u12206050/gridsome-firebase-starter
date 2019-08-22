@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <main>
     <h1>{{tag.name}}</h1>
     <div class="row">
       <template v-for="post in posts">
@@ -11,7 +11,7 @@
         </g-link>
       </template>
     </div>
-  </Layout>
+  </main>
 </template>
 
 <page-query>

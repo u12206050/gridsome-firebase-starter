@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <main>
     <article>
       <h1>{{post.title}}</h1>
       <figure>
@@ -15,7 +15,7 @@
         </div>
       </div>
     </article>
-  </Layout>
+  </main>
 </template>
 
 <page-query>

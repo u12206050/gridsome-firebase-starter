@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <main>
     <h1>{{topic.name}}</h1>
     <figure>
       <g-image :src="topic.image" width="800" height="450" :alt="topic.name" />
@@ -17,7 +17,7 @@
         </g-link>
       </template>
     </div>
-  </Layout>
+  </main>
 </template>
 
 <page-query>

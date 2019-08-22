@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <main>
     <div class="row">
       <div class="col-md-8 col-lg-6 center-xs">
         <h2>Login or register to continue</h2>
@@ -9,7 +9,7 @@
         <button v-else @click="show = true">Login / Register</button>
       </div>
     </div>
-  </Layout>
+  </main>
 </template>
 
 <script>

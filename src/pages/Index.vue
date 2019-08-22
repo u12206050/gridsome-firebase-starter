@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <main>
     <section class="bg-gray-100 font-sans">
       <div class="container m-auto flex flex-col md:flex-row max-w-4xl">
         <div class="flex flex-col w-full lg:w-1/2 justify-center items-start py-8">
@@ -116,7 +116,7 @@
       <p>Checkout this block, it only shows if you are logged in.</p>
     </div>
 
-  </Layout>
+  </main>
 </template>
 
 <page-query>
