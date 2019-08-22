@@ -15,7 +15,7 @@
       <div class="text-center">
         <p class="py-6 font-semibold text-2xl">Why GridFire?</p>
         <p class="leading-normal mb-4 max-w-sm m-auto">
-          <a href="https://jamstack.org" class="inline-block text-gray-900 hover:text-gray-800">Jamstack</a> sites</p>
+          <a href="https://jamstack.org" class="inline-block text-gray-900 hover:text-gray-800">Jamstack</a> sites are  a new way of building websites and apps that deliver better performance, higher security, lower cost of scaling, and a better developer experience. Most Jamstack websites allow the visitor to view data very quickly. We have clients that also need their visitors to log in and see their account history, preferences, messages, etc. We combined Gridsome and Firebase to get the best of both worlds.</p>
       </div>
   <!-- <div class="flex flex-col sm:flex-row flex-wrap my-8">
     <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 border-gray-100 border-r border-b hover:shadow-md hover:border-0 bg-white hover:transform-scale-subtle transition-normal hover:show-child">
