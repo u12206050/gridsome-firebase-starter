@@ -1,18 +1,18 @@
 <template>
-  <div class="cookies" v-if="showCookies">
+  <div class="cookies bg-black text-white border-white border-solid" v-if="showCookies">
     <div class="container mx-auto p-8">
-      <h3>Simple Cookies</h3>
-      <div class="row middle-xs center-xs">
-        <code class="col-sm-12 col-md">Straight to the point. We will only load cookies if you allow us, otherwise we'll just be using you local storage and not send any data to our servers</code>
+      <h3 class="capitalize text-lg font-medium mx-2 my-4">Simple Cookies</h3>
+      <div class="row middle-xs center-xs m-2">
+        <code class="col-sm-12 col-md">Straight to the point. We will only load cookies if you allow us, otherwise we'll just be using your browser storage and not send any data to our servers</code>
       </div>
       <div class="row">
-        <button aria-label="Accept all cookies" @click="setCookie('ALL')" class="main">Allow All</button>
-        <button aria-label="Don't allow cookies" @click="setCookie('BASIC')">Local Storage Only</button>
+        <button aria-label="Accept all cookies" @click="setCookie('ALL')" class="py-3 px-6 uppercase text-sm tracking-wide m-2 border-2 bg-indigo-500 text-white hover:bg-indigo-600 hover:shadow-md transition">Allow All</button>
+        <button aria-label="Don't allow cookies" @click="setCookie('BASIC')" class="py-3 px-6 uppercase text-xs tracking-wide m-2 border-2 border-white hover:bg-gray-900">Local Storage Only</button>
       </div>
     </div>
   </div>
   <div v-else class="center-xs">
-    <button class="btn--clear" aria-label="Remove cookies" @click="clearCookies">Clear Cookies</button>
+    <button class="" aria-label="Remove cookies" @click="clearCookies">Clear Cookies</button>
   </div>
 </template>
 
