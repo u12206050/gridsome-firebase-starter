@@ -12,7 +12,7 @@
     </div>
   </div>
   <div v-else class="center-xs">
-    <button class="" aria-label="Remove cookies" @click="clearCookies">Clear Cookies</button>
+    <button class="mt-20 py-0 px-1 uppercase text-sm tracking-wide m-2 border-2 bg-indigo-400 text-white hover:bg-indigo-600 hover:shadow-md transition" aria-label="Remove cookies" @click="clearCookies">Clear Cookies</button>
   </div>
 </template>
 

@@ -13,31 +13,11 @@
 
     <section class="my-16 font-sans container m-auto max-w-full">
       <div class="text-center">
-        <p class="py-6 font-semibold text-2xl">Why GridFire?</p>
+        <p class="py-6 font-semibold text-2xl">Why <span class="mb-2 font-bold text-3xl text-primary">Grid<span class="text-accent">Fire</span></span> ?</p>
         <p class="leading-normal mb-4 max-w-sm m-auto">
           <a href="https://jamstack.org" class="inline-block text-gray-900 hover:text-gray-800">Jamstack</a> sites are  a new way of building websites and apps that deliver better performance, higher security, lower cost of scaling, and a better developer experience. Most Jamstack websites allow the visitor to view data very quickly. We have clients that also need their visitors to log in and see their account history, preferences, messages, etc. We combined Gridsome and Firebase to get the best of both worlds.</p>
       </div>
-  <!-- <div class="flex flex-col sm:flex-row flex-wrap my-8">
-    <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 border-gray-100 border-r border-b hover:shadow-md hover:border-0 bg-white hover:transform-scale-subtle transition-normal hover:show-child">
-      <div class="w-12 h-12 rounded-full bg-gray-100" alt=""></div>
-      <h3 class="mt-4 mb-1">Digital</h3>
-      <p class="mt-4 text-center text-gray-dark leading-normal px-6 hidden hover:block">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p>
-      <p class="leading-normal mb-4 text-gray-900">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-    </div>
-    <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8  border-gray-100 border-r border-b hover:shadow-md hover:border-0 bg-white hover:transform-scale-subtle transition-normal hover:show-child">
-      <div class="w-12 h-12 rounded-full bg-gray-100" alt=""></div>
-      <h3 class="mt-4 mb-1">Branding</h3>
-      <p class="mt-4 text-center text-gray-dark leading-normal hidden hover:block">Praesent dapibus, neque id cursus faucibus, tortor neque egestas auguae, eu vulputate magna eros eu erat. Aliquam erat volutpat.</p>
-    </div>
-    <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col items-center justify-center h-48 md:h-64 p-8  border-gray-100 border-b hover:shadow-md hover:border-0 bg-white hover:transform-scale-subtle transition-normal hover:show-child">
-      <div class="w-12 h-12 rounded-full bg-gray-100" alt=""></div>
-      <h3 class="mt-4 mb-1">Excellence</h3>
-      <p class="mt-4 text-center text-gray-dark leading-normal hidden hover:block">Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus.</p>
-    </div>
-  </div> -->
-</section>
+    </section>
 
     <section
       class="my-8 font-sans container max-w-xl m-auto flex flex-col lg:flex-row text-center lg:text-left sm:items-center">
@@ -75,7 +55,7 @@
         <h1 class="my-4 font-normal">Why Tailwind CSS?</h1>
         <p class="leading-normal mb-4 text-gray-900">Tailwind CSS is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.
         </p>
-        <a href="https://tailwindcss.com" class="inline-block text-gray-900 hover:text-gray-800">Learn more</a>
+        <a href="https://tailwindcss.com" class="inline-block text-teal-500 hover:text-gray-800">Learn more</a>
       </div>
     </section>
 
@@ -103,13 +83,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <!-- <div class="row middle-xs">
-      <g-image class="col-xs-5" alt="Gridsome Logo" src="~/assets/images/gridsome-logo.svg" width="300" />
-      <p class="col-xs-2 center-xs amp-sign">&</p>
-      <g-image class="col-xs-5" alt="Firebase Logo" src="~/assets/images/firebase-logo.png" width="300" />
-    </div> -->
 
     <div class="top-section" v-if="$auth.isLoggedIn">
       <strong>You are logged in</strong>
