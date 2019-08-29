@@ -59,29 +59,23 @@
       </div>
     </section>
 
-    <LazyHydrate when-idle>
-      <Clicks />
-    </LazyHydrate>
-
     <section class="font-sans container m-auto text-center py-8 pt-16">
+      <hr class="border-b w-8 m-auto my-6">
       <label for="tagline" class="tracking-wide font-bold text-gray-900 text-3xl">Popular Topics</label>
       <h1 class="mt-2 mb-4 text-gray-600 max-w-sm m-auto">Pick any of these categories from our blog</h1>
-      <hr class="border-b w-8 m-auto my-6">
-
-      <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
+      <div class="mt-16 sm:overflow-x-auto sm:overflow-y-hidden">
         <div class="px-4 sm:inline-flex sm:pt-2 sm:pb-8 xl:px-8">
-          <div v-for="(topic, i) in topics" :key="i" class="sm:mt-0 sm:w-80 sm:flex-shrink-0">
+          <div v-for="(topic, i) in topics" :key="i" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 mx-8">
             <div>
               <div class="relative pb-5/6">
-                <img class="absolute inset-0 h-full w-full rounded-lg shadow-md object-cover" :src="topic.image" alt="">
+                <g-image class="inset-0 w-full max-w-1/4 xs:max-w-full rounded-lg shadow-md object-cover" :src="topic.image" alt="topic.name" />
               </div>
-              <div class="relative px-4 -mt-16">
-                <div class="bg-white rounded-lg px-4 py-4 shadow-lg">
-                  <div class="flex items-baseline">
-                    <span class="inline-block px-2 py-1 leading-none bg-teal-200 text-teal-800 rounded-full font-semibold uppercase tracking-wide text-xs">Plus</span>
-                  </div>
-                  <h4 class="mt-1 text-gray-900 font-semibold text-lg">{{ topic.name }}</h4>
-                  <div class="mt-2 flex items-center text-sm text-gray-600">
+              <div class="relative px-4 -mt-8">
+                <div class="bg-gray-100 rounded-lg px-4 py-4 mb-8 shadow-lg text-center">
+                  <g-link :key="topic.id" :to="topic.path">
+                    <h4 class="mt-1 text-gray-900 font-semibold text-center text-lg underline cursor-pointer">{{topic.name}}</h4>
+                  </g-link>
+                  <div class="mt-2 text-sm text-gray-600">
                     <span class="ml-2">{{ topic.posts.count }} posts</span>
                   </div>
                 </div>
@@ -90,8 +84,11 @@
           </div>
         </div>
       </div>
-
     </section>
+
+    <LazyHydrate when-idle>
+      <Clicks />
+    </LazyHydrate>
 
     <div class="top-section" v-if="$auth.isLoggedIn">
       <strong>You are logged in</strong>
@@ -108,7 +105,7 @@ query Topics {
       node {
         id
         name
-        image
+        image (width: 300, height: 200)
         path
         posts: belongsTo {
           count: totalCount

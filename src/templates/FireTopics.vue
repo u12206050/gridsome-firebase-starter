@@ -5,17 +5,18 @@
       <g-image :src="topic.image" width="800" height="450" :alt="topic.name" />
       <figcaption>{{topic.info}}</figcaption>
     </figure>
-
-    <h3>Latest Posts</h3>
-    <div class="row">
-      <template v-for="post in posts">
-        <g-link :key="post.id" :to="post.path" class="post_card">
-          <figure>
-            <g-image :src="post.image" width="300" height="300" :alt="post.title" />
-            <figcaption>{{post.title}}</figcaption>
-          </figure>
-        </g-link>
-      </template>
+    <div v-if="posts.length!=0">
+      <h3>Latest Posts</h3>
+      <div class="row">
+        <template v-for="post in posts">
+          <g-link :key="post.id" :to="post.path" class="post_card">
+            <figure>
+              <g-image :src="post.image" width="300" height="300" :alt="post.title" />
+              <figcaption>{{post.title}}</figcaption>
+            </figure>
+          </g-link>
+        </template>
+      </div>
     </div>
   </main>
 </template>
