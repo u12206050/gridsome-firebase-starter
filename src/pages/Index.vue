@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section class="bg-gray-100 font-sans">
+    <section class="bg-gray-100 font-sans p-6">
       <div class="container m-auto flex flex-col md:flex-row max-w-4xl">
         <div class="flex flex-col w-full lg:w-1/2 justify-center items-start py-8">
           <p class="text-sm">Meet</p>
@@ -11,7 +11,7 @@
       </div>
     </section>
 
-    <section class="my-16 font-sans container m-auto max-w-full">
+    <section class="my-16 p-6 font-sans container m-auto max-w-full">
       <div class="text-center">
         <p class="py-6 font-semibold text-2xl">Why <span class="mb-2 font-bold text-3xl text-primary">Grid<span class="text-accent">Fire</span></span> ?</p>
         <p class="leading-normal mb-4 max-w-sm m-auto">
@@ -20,9 +20,9 @@
     </section>
 
     <section
-      class="my-8 font-sans container max-w-xl m-auto flex flex-col lg:flex-row text-center lg:text-left sm:items-center">
+      class="my-8 p-6 font-sans container max-w-xl m-auto flex flex-col lg:flex-row text-center lg:text-left sm:items-center">
       <div class="flex justify-center w-full lg:w-1/2">
-        <g-image class="h-18 w-full lg:w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/gridsome-logo-circle.svg"/>
+        <g-image class="w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/gridsome-logo-circle.svg"/>
       </div>
       <div class="w-full lg:w-1/2 flex flex-col justify-center items-start p-8 items-center lg:items-start">
         <h1 class="my-4 font-semibold">Why Gridsome?</h1>
@@ -34,7 +34,7 @@
     </section>
 
     <section
-      class="my-8 pt-8 font-sans container max-w-xl m-auto flex flex-col-reverse lg:flex-row text-center lg:text-left sm:items-center">
+      class="my-8 pt-8 p-6 font-sans container max-w-xl m-auto flex flex-col-reverse lg:flex-row text-center lg:text-left sm:items-center">
       <div class="w-full lg:w-1/2 flex flex-col justify-center items-start p-8 items-center lg:items-start">
         <h1 class="my-4 font-semibold">Why Firebase?</h1>
         <p class="leading-normal mb-4 text-gray-900">Firebase lets you build more powerful, secure and scalable apps, using world-class infrastructure. Authentication, databases, cloud functions, and more.
@@ -42,14 +42,14 @@
         <a href="https://firebase.google.com/" class="inline-block text-accent hover:text-gray-800">Learn more</a>
       </div>
       <div class="flex justify-center w-full lg:w-1/2">
-        <g-image class="h-18 w-full lg:w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/firebase-logo-flame.png"/>
+        <g-image class="w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/firebase-logo-flame.png"/>
       </div>
     </section>
 
     <section
-      class="my-8 font-sans container max-w-xl m-auto flex flex-col lg:flex-row text-center lg:text-left sm:items-center">
+      class="mt-8 px-6 font-sans container max-w-xl m-auto flex flex-col lg:flex-row text-center lg:text-left sm:items-center">
       <div class="flex justify-center w-full lg:w-1/2">
-        <g-image class="h-18 w-full lg:w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/tailwind-logo.jpg"/>
+        <g-image class="w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/tailwind-logo.jpg"/>
       </div>
       <div class="w-full lg:w-1/2 flex flex-col justify-center items-start p-8 items-center lg:items-start">
         <h1 class="my-4 font-normal">Why Tailwind CSS?</h1>
@@ -63,17 +63,34 @@
       <Clicks />
     </LazyHydrate>
 
-    <section class="font-sans container m-auto text-center py-8">
-      <label for="tagline" class="uppercase tracking-wide font-bold text-gray-900">Popular Topics</label>
-      <!-- <h1 class="mt-2 mb-4 font-medium max-w-sm m-auto">Those are important in Vanue Management</h1> -->
+    <section class="font-sans container m-auto text-center py-8 pt-16">
+      <label for="tagline" class="tracking-wide font-bold text-gray-900 text-3xl">Popular Topics</label>
+      <h1 class="mt-2 mb-4 text-gray-600 max-w-sm m-auto">Pick any of these categories from our blog</h1>
       <hr class="border-b w-8 m-auto my-6">
-      <div v-for="topic in topics" :key="topic.id" class="flex flex-wrap justify-between items-start">
-        <div class="w-full sm:w-1/2 md:w-1/4 flex flex-col items-center justify-center p-4">
-          <div class="w-14 h-14 rounded-full mr-4 bg-gray-100" alt=""></div>
-          <g-link :to="topic.path"><h2 class="my-4 font-medium text-gray-900">{{topic.name}}</h2></g-link>
-          <!-- <p class="leading-normal mb-4 text-gray-900">Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</p> -->
+
+      <div class="mt-6 sm:overflow-x-auto sm:overflow-y-hidden">
+        <div class="px-4 sm:inline-flex sm:pt-2 sm:pb-8 xl:px-8">
+          <div v-for="(topic, i) in topics" :key="i" class="sm:mt-0 sm:w-80 sm:flex-shrink-0">
+            <div>
+              <div class="relative pb-5/6">
+                <img class="absolute inset-0 h-full w-full rounded-lg shadow-md object-cover" :src="topic.image" alt="">
+              </div>
+              <div class="relative px-4 -mt-16">
+                <div class="bg-white rounded-lg px-4 py-4 shadow-lg">
+                  <div class="flex items-baseline">
+                    <span class="inline-block px-2 py-1 leading-none bg-teal-200 text-teal-800 rounded-full font-semibold uppercase tracking-wide text-xs">Plus</span>
+                  </div>
+                  <h4 class="mt-1 text-gray-900 font-semibold text-lg">{{ topic.name }}</h4>
+                  <div class="mt-2 flex items-center text-sm text-gray-600">
+                    <span class="ml-2">{{ topic.posts.count }} posts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
     </section>
 
     <div class="top-section" v-if="$auth.isLoggedIn">

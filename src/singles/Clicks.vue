@@ -1,5 +1,5 @@
 <template>
-    <div class="font-sans text-center p-8 lg:px-0 bg-gray-100">
+    <div class="font-sans text-center p-20 lg:px-0 bg-gray-100">
       <div class="container flex flex-col sm:flex-row bg-white max-w-xl m-auto shadow">
         <div class="w-full sm:w-3/4 px-6 pt-6 text-left flex flex-col justify-center">
           <h2 class="capitalize font-medium">Ready for an awesome Firebase & Gridsome powered app!</h2>
