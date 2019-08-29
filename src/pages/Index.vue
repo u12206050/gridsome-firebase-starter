@@ -64,14 +64,14 @@
       <label for="tagline" class="tracking-wide font-bold text-gray-900 text-3xl">Popular Topics</label>
       <h1 class="mt-2 mb-4 text-gray-600 max-w-sm m-auto">Pick any of these categories from our blog</h1>
       <div class="mt-16 sm:overflow-x-auto sm:overflow-y-hidden">
-        <div class="px-4 sm:inline-flex sm:pt-2 sm:pb-8 xl:px-8">
-          <div v-for="(topic, i) in topics" :key="i" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 mx-8">
+        <div class="px-4 sm:inline-flex sm:pt-2 sm:pb-8 xl:px-2">
+          <div v-for="(topic, i) in topics" :key="i" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 mx-6">
             <div>
               <div class="relative pb-5/6">
                 <g-image class="inset-0 w-full max-w-1/4 xs:max-w-full rounded-lg shadow-md object-cover" :src="topic.image" alt="topic.name" />
               </div>
               <div class="relative px-4 -mt-8">
-                <div class="bg-gray-100 rounded-lg px-4 py-4 mb-8 shadow-lg text-center">
+                <div class="bg-gray-100 opacity-90 rounded-lg px-4 py-4 mb-8 shadow-lg text-center">
                   <g-link :key="topic.id" :to="topic.path">
                     <h4 class="mt-1 text-gray-900 font-semibold text-center text-lg underline cursor-pointer">{{topic.name}}</h4>
                   </g-link>

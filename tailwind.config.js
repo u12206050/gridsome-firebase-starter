@@ -8,6 +8,9 @@ module.exports = {
         },
         secondary: '#0d2538',
         accent: '#F6830C',
+      },
+      opacity: {
+        '90': '0.90'
       }
     }
   },
