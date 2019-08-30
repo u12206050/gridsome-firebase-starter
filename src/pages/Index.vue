@@ -22,7 +22,7 @@
     <section
       class="my-8 p-6 font-sans container max-w-xl m-auto flex flex-col lg:flex-row text-center lg:text-left sm:items-center">
       <div class="flex justify-center w-full lg:w-1/2">
-        <g-image class="w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/gridsome-logo-circle.svg"/>
+        <g-image class="w-1/3 lg:w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/gridsome-logo-circle.svg"/>
       </div>
       <div class="w-full lg:w-1/2 flex flex-col justify-center items-start p-8 items-center lg:items-start">
         <h1 class="my-4 font-semibold">Why Gridsome?</h1>
@@ -42,14 +42,14 @@
         <a href="https://firebase.google.com/" class="inline-block text-accent hover:text-gray-800">Learn more</a>
       </div>
       <div class="flex justify-center w-full lg:w-1/2">
-        <g-image class="w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/firebase-logo-flame.png"/>
+        <g-image class="w-1/3 lg:w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/firebase-logo-flame.png"/>
       </div>
     </section>
 
     <section
       class="mt-8 px-6 font-sans container max-w-xl m-auto flex flex-col lg:flex-row text-center lg:text-left sm:items-center">
       <div class="flex justify-center w-full lg:w-1/2">
-        <g-image class="w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/tailwind-logo.jpg"/>
+        <g-image class="w-1/3 lg:w-1/2" fit="contain" alt="Gridsome Logo" src="~/assets/images/tailwind-logo.jpg"/>
       </div>
       <div class="w-full lg:w-1/2 flex flex-col justify-center items-start p-8 items-center lg:items-start">
         <h1 class="my-4 font-normal">Why Tailwind CSS?</h1>
@@ -65,7 +65,7 @@
       <h1 class="mt-2 mb-4 text-gray-600 max-w-sm m-auto">Pick any of these categories from our blog</h1>
       <div class="mt-16 sm:overflow-x-auto sm:overflow-y-hidden">
         <div class="px-4 sm:inline-flex sm:pt-2 sm:pb-8 xl:px-2">
-          <div v-for="(topic, i) in topics" :key="i" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 mx-6">
+          <div v-for="(topic, i) in topics" :key="i" class="sm:mt-0 sm:w-80 sm:flex-shrink-0 mx-5">
             <div>
               <div class="relative pb-5/6">
                 <g-image class="inset-0 w-full max-w-1/4 xs:max-w-full rounded-lg shadow-md object-cover" :src="topic.image" alt="topic.name" />
