@@ -11,7 +11,7 @@
       </div>
     </section>
 
-    <section class="my-16 p-6 font-sans container m-auto max-w-full">
+    <section class="my-16 p-6 font-sans m-auto max-w-full">
       <div class="text-center">
         <p class="py-6 font-semibold text-2xl">Why <span class="mb-2 font-bold text-3xl text-primary">Grid<span class="text-accent">Fire</span></span> ?</p>
         <p class="leading-normal mb-4 max-w-sm m-auto">
@@ -59,7 +59,7 @@
       </div>
     </section>
 
-    <section class="font-sans container m-auto text-center py-8 pt-16">
+    <section class="font-sans m-auto text-center py-8 pt-16">
       <hr class="border-b w-8 m-auto my-6">
       <label for="tagline" class="tracking-wide font-bold text-gray-900 text-3xl">Popular Topics</label>
       <h1 class="mt-2 mb-4 text-gray-600 max-w-sm m-auto">Pick any of these categories from our blog</h1>
@@ -136,7 +136,7 @@ export default {
   },
   computed: {
     topics() {
-      return this.$page.allFireTopics.edges && this.$page.allFireTopics.edges.map(e => e.node)
+      return this.$page.allFireTopics.edges && this.$page.allFireTopics.edges.map(e => e.node).sort((a,b) => a.posts.count > b.posts.count? -1 : 1)
     },
     user() {
       /**
