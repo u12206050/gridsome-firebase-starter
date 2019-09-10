@@ -1,5 +1,5 @@
 <template>
-  <span @click="logout" class="Logout">Logout</span>
+  <li @click="logout" class="pr-2"><a href="#" class="md:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-primary">Log Out</a></li>
 </template>
 <script>
 export default {
