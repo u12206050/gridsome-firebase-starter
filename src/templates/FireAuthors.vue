@@ -15,7 +15,7 @@
 </template>
 
 <page-query>
-query Author ($id: String!) {
+query Author ($id: ID!) {
   author: fireAuthors (id: $id) {
     id
     fname

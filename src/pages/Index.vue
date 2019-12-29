@@ -86,7 +86,7 @@
           <p class="text-gray-900 mt-2 mb-6">You have clicked <strong v-text="clicks"></strong> times</p>
         </div>
         <div class="w-full sm:w-1/4 flex justify-start sm:justify-center items-center pl-6 pb-6 sm:pl-0 sm:pb-0">
-          <button class=" bg-black hover:bg-gray-900 text-white hover:text-white py-3 px-6 uppercase text-xs tracking-wide">Learn More</button>
+          <button class=" bg-black hover:bg-gray-900 text-white hover:text-white py-3 px-6 uppercase text-xs tracking-wide">Click Me</button>
         </div>
       </div>
     </section>

@@ -1,17 +1,17 @@
 <template>
   <main>
-    <h1>{{topic.name}}</h1>
-    <figure>
-      <g-image :src="topic.image" width="800" height="450" :alt="topic.name" />
-      <figcaption>{{topic.info}}</figcaption>
-    </figure>
-
-    <h3>Latest Posts</h3>
-    <div class="row">
+    <div class="text-center mx-auto max-w-sm">
+      <h1 class="text-2xl">{{topic.name}}</h1>
+      <figure>
+        <g-image :src="topic.image" width="800" height="450" :alt="topic.name" />
+        <figcaption>{{topic.info}}</figcaption>
+      </figure>
+    </div>
+    <div class="row my-6 flex">
       <template v-for="post in posts">
-        <g-link :key="post.id" :to="post.path" class="post_card">
+        <g-link :key="post.id" :to="post.path" class="p-6 hover:bg-gray-100 text-center">
           <figure>
-            <g-image :src="post.image" width="300" height="300" :alt="post.title" />
+            <g-image :src="post.image" width="200" height="200" :alt="post.title" />
             <figcaption>{{post.title}}</figcaption>
           </figure>
         </g-link>
@@ -21,7 +21,7 @@
 </template>
 
 <page-query>
-query Topic ($id: String!) {
+query Topic ($id: ID!) {
   topic: fireTopics (id: $id) {
     id
     name
