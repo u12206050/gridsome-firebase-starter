@@ -55,7 +55,19 @@
         <h1 class="my-4 font-normal">Why Tailwind CSS?</h1>
         <p class="leading-normal mb-4 text-gray-900">Tailwind CSS is a highly customizable, low-level CSS framework that gives you all of the building blocks you need to build bespoke designs without any annoying opinionated styles you have to fight to override.
         </p>
-        <a href="https://tailwindcss.com" class="inline-block text-teal-500 hover:text-gray-800">Learn more</a>
+        <a href="https://tailwindcss.com" class="inline-block text-gray-900 hover:text-gray-800">Learn more</a>
+      </div>
+    </section>
+
+    <section class="font-sans text-center py-8 px-4 lg:px-0 bg-gray-100">
+      <div class="container flex flex-col sm:flex-row bg-white max-w-xl m-auto shadow">
+        <div class="w-full sm:w-3/4 px-6 pt-6 text-left flex flex-col justify-center">
+          <h2 class="capitalize font-medium">Ready for an awesome Firebase & Gridsome powered app!</h2>
+          <p class="text-gray-900 mt-2 mb-6">You have clicked <strong v-text="clicks"></strong> times</p>
+        </div>
+        <div class="w-full sm:w-1/4 flex justify-start sm:justify-center items-center pl-6 pb-6 sm:pl-0 sm:pb-0">
+          <button class=" bg-black hover:bg-gray-900 text-white hover:text-white py-3 px-6 uppercase text-xs tracking-wide">Click Me</button>
+        </div>
       </div>
     </section>
 

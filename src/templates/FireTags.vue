@@ -1,11 +1,13 @@
 <template>
   <main>
-    <h1>{{tag.name}}</h1>
-    <div class="row">
+    <div class="text-center mx-auto max-w-sm">
+      <h1 class="text-2xl">{{tag.name}}</h1>
+    </div>
+    <div class="my-6 flex">
       <template v-for="post in posts">
-        <g-link :key="post.id" :to="post.path" class="post_card">
+        <g-link :key="post.id" :to="post.path" class="p-6 hover:bg-gray-100 text-center">
           <figure>
-            <g-image :src="post.image" width="300" height="300" :alt="post.title" />
+            <g-image :src="post.image" width="300" height="300" class="w-64 h-64 object-fill object-center" :alt="post.title" />
             <figcaption>{{post.title}}</figcaption>
           </figure>
         </g-link>
@@ -15,7 +17,7 @@
 </template>
 
 <page-query>
-query Tag ($id: String!) {
+query Tag ($id: ID!) {
   tag: fireTags (id: $id) {
     id
     name
