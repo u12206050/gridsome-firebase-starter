@@ -90,7 +90,7 @@ On every Vue component/view you have access to the following:
 
     Example: `this.$functions.httpsCallable('getTime')().then(time => console.log(time))`
 
-  **`this.$auth**`**: This is extended on the `firebase.auth()` object which besides the `logout()` and `currentUser` methods and function it also has:
+  **`this.$auth`**: This is extended on the `firebase.auth()` object which besides the `logout()` and `currentUser` methods and function it also has:
 
     `this.$auth.isLoggedIn`: If the user is logged in or not
 
